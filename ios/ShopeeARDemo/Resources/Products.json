@@ -1,0 +1,38 @@
+[
+  {
+    "id": "MON001",
+    "title": "Aster 24\" FHD Monitor",
+    "subtitle": "1080p IPS display for home office desks.",
+    "price": 179,
+    "keywords": ["monitor", "display", "desk", "office", "1080p"],
+    "modelName": "DslrCamera",
+    "accentHex": "#3FD1FF"
+  },
+  {
+    "id": "MON002",
+    "title": "Nova 27\" QHD Monitor",
+    "subtitle": "Sharp QHD screen with a slim stand for compact setups.",
+    "price": 269,
+    "keywords": ["monitor", "display", "desk", "qhd", "screen"],
+    "modelName": "VintageMovieCamera",
+    "accentHex": "#7A81FF"
+  },
+  {
+    "id": "MON003",
+    "title": "Pulse 25\" Gaming Monitor",
+    "subtitle": "Fast refresh monitor under budget for mixed work and play.",
+    "price": 239,
+    "keywords": ["monitor", "gaming", "desk", "budget", "screen"],
+    "modelName": "MovieBoomMicrophone",
+    "accentHex": "#42E3B4"
+  },
+  {
+    "id": "MON004",
+    "title": "Studio Spotlight Pro",
+    "subtitle": "Adjustable spotlight for film sets, interviews, and staged demos.",
+    "price": 329,
+    "keywords": ["spotlight", "lighting", "studio", "film", "production"],
+    "modelName": "MovieStudioSpotlight",
+    "accentHex": "#F7C75D"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "user_id": "u_001",
+    "location": "Singapore",
+    "preferences": {
+      "delivery_priority": "fast",
+      "budget_sensitivity": "medium",
+      "preferred_sellers": ["Shopee Preferred", "Local SG"]
+    },
+    "order_history": [
+      {
+        "product_id": "SK001",
+        "category": "beauty",
+        "purchased_at": "2026-04-20"
+      }
+    ]
+  }
+]

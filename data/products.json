@@ -1,0 +1,134 @@
+[
+  {
+    "id": "HW001",
+    "title": "15mm PVC Slip Coupling",
+    "category": "home_repair",
+    "description": "Replacement PVC coupling for small household sink and pipe repairs.",
+    "keywords": ["pipe", "sink", "leak", "pvc", "coupling", "plumbing"],
+    "price": 4.2,
+    "rating": 4.8,
+    "sellerId": "S001",
+    "delivery": "next_day",
+    "stock": 120,
+    "imageUrl": "/products/pvc-coupling.png",
+    "attributes": {
+      "size": "15mm",
+      "material": "PVC"
+    },
+    "bundleItems": ["HW002", "HW003"]
+  },
+  {
+    "id": "HW002",
+    "title": "Waterproof Pipe Sealant Tape",
+    "category": "home_repair",
+    "description": "Sealant tape for minor pipe leaks and threaded pipe joints.",
+    "keywords": ["sealant", "tape", "leak", "pipe", "waterproof"],
+    "price": 3.5,
+    "rating": 4.7,
+    "sellerId": "S001",
+    "delivery": "next_day",
+    "stock": 200,
+    "imageUrl": "/products/sealant-tape.png"
+  },
+  {
+    "id": "HW003",
+    "title": "Multi-Purpose Waterproof Sealant",
+    "category": "home_repair",
+    "description": "Waterproof sealant for small household repair jobs.",
+    "keywords": ["sealant", "waterproof", "repair", "leak"],
+    "price": 6.9,
+    "rating": 4.6,
+    "sellerId": "S002",
+    "delivery": "same_day",
+    "stock": 55,
+    "imageUrl": "/products/waterproof-sealant.png"
+  },
+  {
+    "id": "SK001",
+    "title": "Hydrating Barrier Repair Moisturizer",
+    "category": "beauty",
+    "description": "Lightweight moisturizer for dry or sensitive skin.",
+    "keywords": ["moisturizer", "skincare", "dry skin", "barrier", "interview"],
+    "price": 18.9,
+    "rating": 4.7,
+    "sellerId": "S003",
+    "delivery": "same_day",
+    "stock": 45,
+    "imageUrl": "/products/moisturizer.png",
+    "attributes": {
+      "skin_type": ["dry", "sensitive"],
+      "finish": "non-greasy"
+    },
+    "bundleItems": ["SK002"]
+  },
+  {
+    "id": "SK002",
+    "title": "Ceramide Facial Mist",
+    "category": "beauty",
+    "description": "Travel-sized facial mist for quick hydration touch-ups.",
+    "keywords": ["mist", "hydration", "barrier", "dry skin"],
+    "price": 8.9,
+    "rating": 4.5,
+    "sellerId": "S003",
+    "delivery": "same_day",
+    "stock": 72,
+    "imageUrl": "/products/facial-mist.png"
+  },
+  {
+    "id": "FA001",
+    "title": "Slim Fit Dark Denim Jeans",
+    "category": "fashion",
+    "description": "Dark denim jeans suitable for smart casual outfits.",
+    "keywords": ["dark denim", "jeans", "boots", "jacket", "smart casual"],
+    "price": 29.9,
+    "rating": 4.6,
+    "sellerId": "S004",
+    "delivery": "next_day",
+    "stock": 80,
+    "imageUrl": "/products/dark-denim.png",
+    "attributes": {
+      "color": "dark blue",
+      "style": "smart casual"
+    },
+    "bundleItems": ["FA002"]
+  },
+  {
+    "id": "FA002",
+    "title": "Black Leather Belt",
+    "category": "fashion",
+    "description": "Simple black belt that pairs well with boots and dark jackets.",
+    "keywords": ["belt", "black", "boots", "jacket", "smart casual"],
+    "price": 14.9,
+    "rating": 4.4,
+    "sellerId": "S004",
+    "delivery": "next_day",
+    "stock": 65,
+    "imageUrl": "/products/leather-belt.png"
+  },
+  {
+    "id": "EL001",
+    "title": "USB-C to HDMI Adapter",
+    "category": "electronics",
+    "description": "Adapter for connecting USB-C laptops to HDMI monitors.",
+    "keywords": ["usb-c", "hdmi", "adapter", "monitor", "laptop", "cable"],
+    "price": 12.9,
+    "rating": 4.8,
+    "sellerId": "S005",
+    "delivery": "next_day",
+    "stock": 150,
+    "imageUrl": "/products/usb-c-hdmi.png"
+  },
+  {
+    "id": "GR001",
+    "title": "Organic Rolled Oats 1kg",
+    "category": "grocery",
+    "description": "Pantry staple for breakfast and meal prep.",
+    "keywords": ["oats", "breakfast", "pantry", "replenish", "grocery"],
+    "price": 7.5,
+    "rating": 4.9,
+    "sellerId": "S006",
+    "delivery": "next_day",
+    "stock": 300,
+    "imageUrl": "/products/oats.png"
+  }
+]

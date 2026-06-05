@@ -1,0 +1,5 @@
+.DS_Store
+.env
+
+ios/ShopeeARDemo/Code_Proto/
+**/xcuserdata/

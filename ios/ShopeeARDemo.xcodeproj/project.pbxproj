@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02B8BEE2D4314F025C44D6BB /* AgentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F917BFDDDFFEB40F90A0CFB /* AgentViewModel.swift */; };
+		05ACFD383D87D6DD7A58B2E2 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58C2B0A204D6D92F79E572 /* ARViewContainer.swift */; };
+		0C55ECFA9F76B6E8D1FE6676 /* CartSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011BE6DB59FD90ED8060287 /* CartSheet.swift */; };
+		168B85E3F752076094D17736 /* ProductCatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116AA8EE84102B0EF593521E /* ProductCatalogService.swift */; };
+		2F2D3DEC8F34BFF5532D5D23 /* ProductCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A921E356D9429128F1CCB55E /* ProductCarousel.swift */; };
+		33998A6BE31ECEDD9B77C318 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D578D5862A5332FB398902 /* CartService.swift */; };
+		3946A013A19E20045DD2CAE7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBBCB9C521D1F301685DC1B /* Product.swift */; };
+		439F9C3FE1583CE84FB10CCB /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73411B10EDEBE61C33E13B6 /* CartItem.swift */; };
+		778616CDEA492ED87368FD73 /* ARShoppingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 602F07E22793C7E883C5EDB6 /* ARShoppingApp.swift */; };
+		AA93D24740A1E2EAD69CA37E /* AgentOrb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD0EEB936B1F7E782ABC76B /* AgentOrb.swift */; };
+		B3EA0D678EADF096DDDEDD92 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213AFF64C578EF11B091E968 /* ProductCard.swift */; };
+		B8D7FE2DBD2313EBC5E8B3BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BED1E744D1E70323A43A037 /* ContentView.swift */; };
+		F2DE0BCF245EE3323B52644F /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934FB19DC95DCD15976EA03 /* OpenAIService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06D578D5862A5332FB398902 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
+		116AA8EE84102B0EF593521E /* ProductCatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogService.swift; sourceTree = "<group>"; };
+		1BBBCB9C521D1F301685DC1B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		213AFF64C578EF11B091E968 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
+		4F917BFDDDFFEB40F90A0CFB /* AgentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentViewModel.swift; sourceTree = "<group>"; };
+		5011BE6DB59FD90ED8060287 /* CartSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSheet.swift; sourceTree = "<group>"; };
+		5BED1E744D1E70323A43A037 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		602F07E22793C7E883C5EDB6 /* ARShoppingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARShoppingApp.swift; sourceTree = "<group>"; };
+		8A58C2B0A204D6D92F79E572 /* ARViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewContainer.swift; sourceTree = "<group>"; };
+		A921E356D9429128F1CCB55E /* ProductCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCarousel.swift; sourceTree = "<group>"; };
+		A934FB19DC95DCD15976EA03 /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		CBD0EEB936B1F7E782ABC76B /* AgentOrb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentOrb.swift; sourceTree = "<group>"; };
+		CE0C4940BD14B226F35245E7 /* ShopeeARDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopeeARDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E73411B10EDEBE61C33E13B6 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0F5B1F1E9D4DA876417C18F4 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A392A107A4F98C6A4E4933D6 /* AR */,
+				81C9E2A2B13E4186BAB16E38 /* Cart */,
+				23C7F420D6E6DAF613E9E518 /* Discovery */,
+				D9032E69DF1CFB11653C0323 /* Recommendations */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		1833919A787ED62FA1F6186B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E73411B10EDEBE61C33E13B6 /* CartItem.swift */,
+				1BBBCB9C521D1F301685DC1B /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A2B1A1760764F53B4DBEC60 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4F917BFDDDFFEB40F90A0CFB /* AgentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		23C7F420D6E6DAF613E9E518 /* Discovery */ = {
+			isa = PBXGroup;
+			children = (
+				213AFF64C578EF11B091E968 /* ProductCard.swift */,
+			);
+			path = Discovery;
+			sourceTree = "<group>";
+		};
+		467E588870C771FE41F83737 /* ShopeeARDemo */ = {
+			isa = PBXGroup;
+			children = (
+				602F07E22793C7E883C5EDB6 /* ARShoppingApp.swift */,
+				5BED1E744D1E70323A43A037 /* ContentView.swift */,
+				0F5B1F1E9D4DA876417C18F4 /* Features */,
+				1833919A787ED62FA1F6186B /* Models */,
+				F67CA67537C62E77C5691355 /* Services */,
+				1A2B1A1760764F53B4DBEC60 /* ViewModels */,
+			);
+			path = ShopeeARDemo;
+			sourceTree = "<group>";
+		};
+		53956C84631E2882B0BAD9C1 = {
+			isa = PBXGroup;
+			children = (
+				467E588870C771FE41F83737 /* ShopeeARDemo */,
+				E201D3957912E7F890CD640B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		81C9E2A2B13E4186BAB16E38 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				5011BE6DB59FD90ED8060287 /* CartSheet.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		A392A107A4F98C6A4E4933D6 /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				8A58C2B0A204D6D92F79E572 /* ARViewContainer.swift */,
+				A921E356D9429128F1CCB55E /* ProductCarousel.swift */,
+			);
+			path = AR;
+			sourceTree = "<group>";
+		};
+		D9032E69DF1CFB11653C0323 /* Recommendations */ = {
+			isa = PBXGroup;
+			children = (
+				CBD0EEB936B1F7E782ABC76B /* AgentOrb.swift */,
+			);
+			path = Recommendations;
+			sourceTree = "<group>";
+		};
+		E201D3957912E7F890CD640B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE0C4940BD14B226F35245E7 /* ShopeeARDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F67CA67537C62E77C5691355 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06D578D5862A5332FB398902 /* CartService.swift */,
+				A934FB19DC95DCD15976EA03 /* OpenAIService.swift */,
+				116AA8EE84102B0EF593521E /* ProductCatalogService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CFCBD604C250CD3CB3AEBA6 /* ShopeeARDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05ABE268CFEDEC6A9A8E421D /* Build configuration list for PBXNativeTarget "ShopeeARDemo" */;
+			buildPhases = (
+				E5C587178E31716907EC406F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShopeeARDemo;
+			packageProductDependencies = (
+			);
+			productName = ShopeeARDemo;
+			productReference = CE0C4940BD14B226F35245E7 /* ShopeeARDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC1F8C95465BA76C4246ABEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					4CFCBD604C250CD3CB3AEBA6 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 575D3527BC92E29C102ABB2C /* Build configuration list for PBXProject "ShopeeARDemo" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 53956C84631E2882B0BAD9C1;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E201D3957912E7F890CD640B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CFCBD604C250CD3CB3AEBA6 /* ShopeeARDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5C587178E31716907EC406F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				778616CDEA492ED87368FD73 /* ARShoppingApp.swift in Sources */,
+				05ACFD383D87D6DD7A58B2E2 /* ARViewContainer.swift in Sources */,
+				AA93D24740A1E2EAD69CA37E /* AgentOrb.swift in Sources */,
+				02B8BEE2D4314F025C44D6BB /* AgentViewModel.swift in Sources */,
+				439F9C3FE1583CE84FB10CCB /* CartItem.swift in Sources */,
+				33998A6BE31ECEDD9B77C318 /* CartService.swift in Sources */,
+				0C55ECFA9F76B6E8D1FE6676 /* CartSheet.swift in Sources */,
+				B8D7FE2DBD2313EBC5E8B3BE /* ContentView.swift in Sources */,
+				F2DE0BCF245EE3323B52644F /* OpenAIService.swift in Sources */,
+				3946A013A19E20045DD2CAE7 /* Product.swift in Sources */,
+				B3EA0D678EADF096DDDEDD92 /* ProductCard.swift in Sources */,
+				2F2D3DEC8F34BFF5532D5D23 /* ProductCarousel.swift in Sources */,
+				168B85E3F752076094D17736 /* ProductCatalogService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3E2D70898E4AB4B56E9E407D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 54UL9MDHC2;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = ShopeeARDemo;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.1;
+			};
+			name = Release;
+		};
+		77674224D77B3DB7433BE1AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShopeeARDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prototype.shopee-ar-demo";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0239E36268A7B33D01C8220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 54UL9MDHC2;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = ShopeeARDemo;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.1;
+			};
+			name = Debug;
+		};
+		FEA071C870FCBA97A18B2BBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShopeeARDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.prototype.shopee-ar-demo";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05ABE268CFEDEC6A9A8E421D /* Build configuration list for PBXNativeTarget "ShopeeARDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77674224D77B3DB7433BE1AE /* Debug */,
+				FEA071C870FCBA97A18B2BBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		575D3527BC92E29C102ABB2C /* Build configuration list for PBXProject "ShopeeARDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0239E36268A7B33D01C8220 /* Debug */,
+				3E2D70898E4AB4B56E9E407D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC1F8C95465BA76C4246ABEE /* Project object */;
+}

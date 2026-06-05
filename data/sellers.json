@@ -1,0 +1,44 @@
+[
+  {
+    "id": "S001",
+    "name": "SG Hardware Pro",
+    "rating": 4.9,
+    "isPreferred": true,
+    "location": "Singapore"
+  },
+  {
+    "id": "S002",
+    "name": "FixIt Supplies",
+    "rating": 4.7,
+    "isPreferred": true,
+    "location": "Singapore"
+  },
+  {
+    "id": "S003",
+    "name": "BeautyMall SG",
+    "rating": 4.8,
+    "isPreferred": true,
+    "location": "Singapore"
+  },
+  {
+    "id": "S004",
+    "name": "Urban Basics",
+    "rating": 4.6,
+    "isPreferred": false,
+    "location": "Singapore"
+  },
+  {
+    "id": "S005",
+    "name": "Tech Cable Hub",
+    "rating": 4.8,
+    "isPreferred": true,
+    "location": "Singapore"
+  },
+  {
+    "id": "S006",
+    "name": "Daily Pantry SG",
+    "rating": 4.9,
+    "isPreferred": true,
+    "location": "Singapore"
+  }
+]

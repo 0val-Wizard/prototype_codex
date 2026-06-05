@@ -1,0 +1,28 @@
+[
+  {
+    "id": "V001",
+    "code": "FREESHIP",
+    "description": "Free shipping for local sellers",
+    "discountType": "free_shipping",
+    "value": 2.99,
+    "minSpend": 5
+  },
+  {
+    "id": "V002",
+    "code": "REPAIR10",
+    "description": "10% off home repair items",
+    "discountType": "percent",
+    "value": 10,
+    "minSpend": 10,
+    "category": "home_repair"
+  },
+  {
+    "id": "V003",
+    "code": "BEAUTY5",
+    "description": "$5 off beauty orders over $20",
+    "discountType": "fixed",
+    "value": 5,
+    "minSpend": 20,
+    "category": "beauty"
+  }
+]

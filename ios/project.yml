@@ -1,0 +1,42 @@
+name: ShopeeARDemo
+options:
+  bundleIdPrefix: com.prototype
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    PRODUCT_NAME: ShopeeARDemo
+    SWIFT_VERSION: 5.10
+targets:
+  ShopeeARDemo:
+    type: application
+    platform: iOS
+    sources:
+      - path: ShopeeARDemo
+        includes:
+          - ARShoppingApp.swift
+          - ContentView.swift
+          - Features/AR/ARViewContainer.swift
+          - Features/AR/ProductCarousel.swift
+          - Features/Cart/CartSheet.swift
+          - Features/Discovery/ProductCard.swift
+          - Features/Recommendations/AgentOrb.swift
+          - Models/Product.swift
+          - Models/CartItem.swift
+          - Services/ProductCatalogService.swift
+          - Services/OpenAIService.swift
+          - Services/CartService.swift
+          - ViewModels/AgentViewModel.swift
+    resources:
+      - path: ShopeeARDemo/Resources
+        includes:
+          - Products.json
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.prototype.shopee-ar-demo
+        INFOPLIST_FILE: ShopeeARDemo/Info.plist
+        CODE_SIGN_STYLE: Automatic
+    info:
+      path: ShopeeARDemo/Info.plist
+    scheme:
+      testTargets: []

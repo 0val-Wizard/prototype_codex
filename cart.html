@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopee Cart</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="cart-page">
+    <main class="screen cart-screen">
+      <header class="topbar">
+        <div class="brand-block">
+          <p class="eyebrow">Shopee cart</p>
+          <h1>Your selected items</h1>
+        </div>
+        <a class="ghost-button" href="/">Back to agent</a>
+      </header>
+
+      <section class="panel cart-hero">
+        <div>
+          <p class="eyebrow">Ready to checkout</p>
+          <h2 id="cart-page-count">0 items</h2>
+        </div>
+        <p class="customer-line" id="cart-page-note">Review your current cart before checkout.</p>
+      </section>
+
+      <section class="panel cart-page-panel">
+        <div class="section-head">
+          <h2>Items</h2>
+          <span class="section-chip" id="cart-page-status">Loading</span>
+        </div>
+        <div class="cart-page-items" id="cart-page-items"></div>
+      </section>
+
+      <section class="panel cart-page-panel">
+        <div class="section-head">
+          <h2>Summary</h2>
+        </div>
+        <div class="checkout-summary" id="cart-page-summary"></div>
+      </section>
+    </main>
+
+    <script type="module" src="./cart.js"></script>
+  </body>
+</html>
