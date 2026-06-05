@@ -22,6 +22,7 @@ struct ContentView: View {
                 )
             } else {
                 SharedAgentWebView(store: agentWebViewStore)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                     .ignoresSafeArea()
             }
         }
@@ -222,19 +223,17 @@ private struct CameraAgentView: View {
 private struct SharedAgentWebView: UIViewRepresentable {
     @ObservedObject var store: AgentWebViewStore
 
-    func makeUIView(context: Context) -> UIView {
-        store.containerView
+    func makeUIView(context: Context) -> WKWebView {
+        store.webView
     }
 
-    func updateUIView(_ uiView: UIView, context: Context) {
-        store.attachWebViewIfNeeded()
+    func updateUIView(_ uiView: WKWebView, context: Context) {
         store.loadIfNeeded()
     }
 }
 
 final class AgentWebViewStore: NSObject, ObservableObject, WKScriptMessageHandler, WKNavigationDelegate, WKUIDelegate {
     let url: URL
-    let containerView = UIView()
     let webView: WKWebView
 
     var onCameraTapped: (() -> Void)?
@@ -318,22 +317,6 @@ final class AgentWebViewStore: NSObject, ObservableObject, WKScriptMessageHandle
         webView.scrollView.contentInsetAdjustmentBehavior = .never
         webView.isOpaque = false
         webView.backgroundColor = .clear
-        containerView.backgroundColor = .clear
-        attachWebViewIfNeeded()
-    }
-
-    func attachWebViewIfNeeded() {
-        if webView.superview !== containerView {
-            webView.removeFromSuperview()
-            webView.translatesAutoresizingMaskIntoConstraints = false
-            containerView.addSubview(webView)
-            NSLayoutConstraint.activate([
-                webView.topAnchor.constraint(equalTo: containerView.topAnchor),
-                webView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-                webView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-                webView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-            ])
-        }
     }
 
     func loadIfNeeded() {
