@@ -372,6 +372,19 @@ export function getToolDefinitions() {
         },
         required: ["productIds"]
       }
+    },
+    {
+      type: "function",
+      name: "analyze_surroundings",
+      description:
+        "Inspect the current camera view when the user asks about visible surroundings, objects, style, room setup, or compatibility with what they are looking at.",
+      parameters: {
+        type: "object",
+        properties: {
+          question: { type: "string" }
+        },
+        required: ["question"]
+      }
     }
   ];
 }
@@ -397,6 +410,10 @@ export function runTool(name, args = {}) {
         userId: args.userId || "u_001",
         productIds: args.productIds || [],
       });
+    case "analyze_surroundings":
+      return {
+        message: "analyze_surroundings must be handled by the realtime backend because it requires a live camera snapshot."
+      };
     default:
       throw new Error(`Unsupported tool: ${name}`);
   }

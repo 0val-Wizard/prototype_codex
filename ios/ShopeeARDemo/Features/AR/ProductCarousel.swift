@@ -7,7 +7,7 @@ struct ProductCarousel: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 14) {
+            HStack(spacing: Spacing.md) {
                 ForEach(products) { product in
                     ProductCard(
                         product: product,
@@ -16,7 +16,27 @@ struct ProductCarousel: View {
                     )
                 }
             }
-            .padding(.horizontal, 4)
+            .padding(.horizontal, Spacing.lg)
+            .padding(.vertical, Spacing.xs)
         }
+        .mask(
+            HStack(spacing: 0) {
+                LinearGradient(
+                    colors: [.clear, .black],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+                .frame(width: 16)
+
+                Color.black
+
+                LinearGradient(
+                    colors: [.black, .clear],
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+                .frame(width: 16)
+            }
+        )
     }
 }

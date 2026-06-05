@@ -5,6 +5,7 @@ const customerLine = document.querySelector("#customer-line");
 const assistantMessage = document.querySelector("#assistant-message");
 const messageInput = document.querySelector("#message");
 const imageInput = document.querySelector("#image-input");
+const cameraButton = document.querySelector("#camera-button");
 const micButton = document.querySelector("#mic-button");
 const sendButton = document.querySelector("#send-button");
 const productsPanel = document.querySelector(".products-panel");
@@ -33,6 +34,14 @@ let recommendationState = {
   dismissed: false,
   count: 0,
 };
+
+async function requestNativeCameraSnapshot(question = "") {
+  if (!window.captureNativeCameraView) {
+    throw new Error("Camera capture is unavailable in this view.");
+  }
+
+  return window.captureNativeCameraView({ question });
+}
 
 function syncRecommendationsDrawer() {
   const isOpen = recommendationState.hasProducts && !recommendationState.dismissed;
@@ -228,6 +237,17 @@ function renderCart(cart = [], summary = null, voucher = null) {
   `;
 }
 
+function openCameraExperience() {
+  if (window.webkit?.messageHandlers?.cameraTapped) {
+    return;
+  }
+
+  renderState("idle", {
+    agentLine: "Open this demo in the iOS app to use the AR camera.",
+    customerLine: "The camera button is wired to the native AR screen.",
+  });
+}
+
 async function bootstrap() {
   const response = await fetch(`/api/bootstrap?userId=${encodeURIComponent(userId)}`);
   const data = await response.json();
@@ -316,7 +336,7 @@ function attachProductDataToCart(cart, primaryProducts = [], bundle = []) {
 }
 
 async function encodeSelectedImage() {
-  const file = imageInput.files?.[0];
+  const file = imageInput?.files?.[0];
   if (!file) {
     currentImageBase64 = "";
     return;
@@ -377,7 +397,7 @@ async function startSession() {
         type: "session.update",
         session: {
           instructions:
-            "You are Shopee's universal shopping agent. Use classify_need, search_catalog, and add_to_cart before making concrete purchase claims.",
+            "You are Shopee's universal shopping agent. Use classify_need, search_catalog, add_to_cart, and analyze_surroundings when relevant. If the user asks about what they are currently seeing, visible objects, room context, style matching, or compatibility with the live camera scene, call analyze_surroundings before answering.",
         },
       });
     });
@@ -455,6 +475,16 @@ async function runRealtimeTool(item) {
   } else if (item.name === "add_to_cart") {
     endpoint = "/api/tools/add-to-cart";
     parsedArgs.userId = parsedArgs.userId || userId;
+  } else if (item.name === "analyze_surroundings") {
+    renderState("thinking", {
+      agentLine: "Inspecting the live camera view.",
+      customerLine: "Capturing a snapshot for visual analysis.",
+    });
+
+    const snapshot = await requestNativeCameraSnapshot(parsedArgs.question || "");
+    endpoint = "/api/tools/analyze-surroundings";
+    parsedArgs.imageBase64 = snapshot.imageBase64;
+    parsedArgs.mimeType = snapshot.mimeType || "image/jpeg";
   } else {
     return;
   }
@@ -475,6 +505,10 @@ async function runRealtimeTool(item) {
       uiAction: result.uiAction,
     };
     showRecommendations(result.products || [], [], result.uiAction === "SHOW_PRODUCTS");
+  }
+
+  if (item.name === "analyze_surroundings" && result.summary) {
+    assistantMessage.textContent = result.summary;
   }
 
   if (item.name === "add_to_cart" && result.cart) {
@@ -537,7 +571,12 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
-imageInput.addEventListener("change", encodeSelectedImage);
+if (imageInput) {
+  imageInput.addEventListener("change", encodeSelectedImage);
+}
+if (cameraButton) {
+  cameraButton.addEventListener("click", openCameraExperience);
+}
 sendButton.addEventListener("click", sendAgentRequest);
 messageInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {

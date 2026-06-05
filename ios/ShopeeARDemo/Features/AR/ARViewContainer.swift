@@ -9,6 +9,7 @@ struct ARViewContainer: UIViewRepresentable {
     let placementRequestID: UUID
     let onPlaneDetectionChanged: (Bool) -> Void
     let onModelSelected: (String) -> Void
+    let snapshotStore: ARCameraSnapshotStore?
 
     func makeCoordinator() -> Coordinator {
         Coordinator(
@@ -22,11 +23,11 @@ struct ARViewContainer: UIViewRepresentable {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal]
         configuration.environmentTexturing = .automatic
-        arView.environment.background = .color(.black)
         arView.session.delegate = context.coordinator
         arView.session.run(configuration)
 
         context.coordinator.arView = arView
+        snapshotStore?.arView = arView
         context.coordinator.installInteractions(on: arView)
         context.coordinator.installCoachingOverlay(on: arView)
         context.coordinator.update(products: products, selectedProductID: selectedProductID, placementRequestID: placementRequestID)
@@ -35,6 +36,7 @@ struct ARViewContainer: UIViewRepresentable {
 
     func updateUIView(_ uiView: ARView, context: Context) {
         context.coordinator.arView = uiView
+        snapshotStore?.arView = uiView
         context.coordinator.update(products: products, selectedProductID: selectedProductID, placementRequestID: placementRequestID)
     }
 

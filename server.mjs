@@ -1,4 +1,5 @@
-import { createServer } from "node:http";
+import { createServer as createHttpServer } from "node:http";
+import { createServer as createHttpsServer } from "node:https";
 import { readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -21,8 +22,13 @@ const env = await loadEnv(join(__dirname, ".env"));
 const apiKey = process.env.OPENAI_API_KEY || env.OPENAI_API_KEY;
 const model = process.env.OPENAI_REALTIME_MODEL || env.OPENAI_REALTIME_MODEL || "gpt-realtime-2";
 const voice = process.env.OPENAI_REALTIME_VOICE || env.OPENAI_REALTIME_VOICE || "marin";
+const visionModel = process.env.OPENAI_VISION_MODEL || env.OPENAI_VISION_MODEL || "gpt-4.1-mini";
 const safetyIdentifier =
   process.env.OPENAI_SAFETY_IDENTIFIER || env.OPENAI_SAFETY_IDENTIFIER || "demo-user";
+const host = process.env.HOST || env.HOST || "0.0.0.0";
+const httpsPort = Number(process.env.HTTPS_PORT || env.HTTPS_PORT || port);
+const tlsKeyPath = process.env.SSL_KEY_FILE || env.SSL_KEY_FILE;
+const tlsCertPath = process.env.SSL_CERT_FILE || env.SSL_CERT_FILE;
 
 const sessionConfig = JSON.stringify({
   type: "realtime",
@@ -33,7 +39,7 @@ const sessionConfig = JSON.stringify({
     },
   },
   instructions:
-    "You are Shopee's universal shopping agent. Use the available tools to classify need, search the catalog, and add items to cart. Do not invent products or prices.",
+    "You are Shopee's universal shopping agent. Use the available tools to classify need, analyze surroundings when the user asks about what they are seeing, search the catalog, and add items to cart. Do not invent products or prices.",
   tool_choice: "auto",
   tools: getToolDefinitions(),
 });
@@ -46,7 +52,7 @@ const mimeTypes = {
   ".svg": "image/svg+xml",
 };
 
-const server = createServer(async (req, res) => {
+const requestHandler = async (req, res) => {
   try {
     if (!req.url || !req.method) {
       respondText(res, 400, "Bad request");
@@ -115,6 +121,12 @@ const server = createServer(async (req, res) => {
       return;
     }
 
+    if (req.method === "POST" && url.pathname === "/api/tools/analyze-surroundings") {
+      const body = await parseJsonBody(req);
+      respondJson(res, 200, await analyzeSurroundings(body));
+      return;
+    }
+
     if (req.method === "POST" && url.pathname === "/api/tools/apply-voucher") {
       const body = await parseJsonBody(req);
       respondJson(res, 200, applyBestVoucher(body));
@@ -137,11 +149,21 @@ const server = createServer(async (req, res) => {
     console.error(error);
     respondJson(res, 500, { error: "Internal server error", detail: error.message });
   }
-});
+};
 
-server.listen(port, "0.0.0.0", () => {
-  console.log(`Shopee agent server listening on http://0.0.0.0:${port}`);
-});
+const httpsOptions = await loadHttpsOptions();
+if (httpsOptions) {
+  const server = createHttpsServer(httpsOptions, requestHandler);
+  server.listen(httpsPort, host, () => {
+    console.log(`Shopee agent server listening on https://${host}:${httpsPort}`);
+  });
+} else {
+  const server = createHttpServer(requestHandler);
+  server.listen(port, host, () => {
+    console.log(`Shopee agent server listening on http://${host}:${port}`);
+    console.log("HTTPS is disabled. Set SSL_KEY_FILE and SSL_CERT_FILE in .env to enable TLS.");
+  });
+}
 
 async function handleSession(req, res) {
   if (!apiKey) {
@@ -237,4 +259,131 @@ async function loadEnv(filePath) {
   } catch {
     return {};
   }
+}
+
+async function loadHttpsOptions() {
+  if (!tlsKeyPath || !tlsCertPath) {
+    return null;
+  }
+
+  return {
+    key: await readFile(resolvePath(tlsKeyPath)),
+    cert: await readFile(resolvePath(tlsCertPath)),
+  };
+}
+
+function resolvePath(filePath) {
+  return filePath.startsWith("/") ? filePath : join(__dirname, filePath);
+}
+
+async function analyzeSurroundings({ question = "", imageBase64 = "", mimeType = "image/jpeg" }) {
+  if (!question.trim()) {
+    return {
+      summary: "No camera question was provided.",
+      visualClues: [],
+      suggestedSearchTerms: [],
+    };
+  }
+
+  if (!imageBase64) {
+    return {
+      summary: "Camera capture is unavailable. Open the camera view and try again.",
+      visualClues: [],
+      suggestedSearchTerms: [],
+    };
+  }
+
+  if (!apiKey) {
+    return {
+      summary: "The backend is missing OPENAI_API_KEY, so surroundings analysis is unavailable.",
+      visualClues: [],
+      suggestedSearchTerms: [],
+    };
+  }
+
+  const response = await fetch("https://api.openai.com/v1/responses", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+      "OpenAI-Safety-Identifier": safetyIdentifier,
+    },
+    body: JSON.stringify({
+      model: visionModel,
+      input: [
+        {
+          role: "system",
+          content: [
+            {
+              type: "input_text",
+              text:
+                "You analyze mobile camera scenes for a shopping assistant. Return JSON only with keys: summary (string), visualClues (array of short strings), suggestedSearchTerms (array of short strings), and confidence (number from 0 to 1). Be concrete, avoid overclaiming, and mention uncertainty when visibility is limited.",
+            },
+          ],
+        },
+        {
+          role: "user",
+          content: [
+            {
+              type: "input_text",
+              text: `User question: ${question}`,
+            },
+            {
+              type: "input_image",
+              image_url: `data:${mimeType};base64,${imageBase64}`,
+            },
+          ],
+        },
+      ],
+    }),
+  });
+
+  const responseText = await response.text();
+  if (!response.ok) {
+    return {
+      summary: `Surroundings analysis failed: ${responseText}`,
+      visualClues: [],
+      suggestedSearchTerms: [],
+    };
+  }
+
+  const payload = JSON.parse(responseText);
+  const outputText = payload.output_text || extractResponseText(payload);
+
+  try {
+    const parsed = JSON.parse(outputText);
+    return {
+      summary: parsed.summary || "I analyzed the current scene.",
+      visualClues: Array.isArray(parsed.visualClues) ? parsed.visualClues : [],
+      suggestedSearchTerms: Array.isArray(parsed.suggestedSearchTerms) ? parsed.suggestedSearchTerms : [],
+      confidence: typeof parsed.confidence === "number" ? parsed.confidence : undefined,
+    };
+  } catch {
+    return {
+      summary: outputText || "I analyzed the current scene, but the response could not be structured.",
+      visualClues: [],
+      suggestedSearchTerms: [],
+    };
+  }
+}
+
+function extractResponseText(payload) {
+  if (!Array.isArray(payload?.output)) {
+    return "";
+  }
+
+  const parts = [];
+  for (const item of payload.output) {
+    if (!Array.isArray(item?.content)) {
+      continue;
+    }
+
+    for (const contentItem of item.content) {
+      if (typeof contentItem?.text === "string") {
+        parts.push(contentItem.text);
+      }
+    }
+  }
+
+  return parts.join("\n").trim();
 }

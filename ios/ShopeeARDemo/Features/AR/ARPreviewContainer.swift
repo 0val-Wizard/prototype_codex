@@ -18,7 +18,6 @@ struct ARPreviewContainer: UIViewRepresentable {
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal, .vertical]
         configuration.environmentTexturing = .automatic
-        view.environment.background = .color(.black)
         view.session.run(configuration)
         context.coordinator.arView = view
         context.coordinator.installInteractions(on: view)

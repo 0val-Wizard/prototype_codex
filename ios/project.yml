@@ -16,6 +16,7 @@ targets:
         includes:
           - ARShoppingApp.swift
           - ContentView.swift
+          - DesignSystem.swift
           - Features/AR/ARViewContainer.swift
           - Features/AR/ProductCarousel.swift
           - Features/Cart/CartSheet.swift
@@ -31,6 +32,11 @@ targets:
       - path: ShopeeARDemo/Resources
         includes:
           - Products.json
+          - sellers.json
+          - DslrCamera.usdz
+          - VintageMovieCamera.usdz
+          - MovieBoomMicrophone.usdz
+          - MovieStudioSpotlight.usdz
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.prototype.shopee-ar-demo

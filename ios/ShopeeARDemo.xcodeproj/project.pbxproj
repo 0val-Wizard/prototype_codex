@@ -10,7 +10,14 @@
 		02B8BEE2D4314F025C44D6BB /* AgentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F917BFDDDFFEB40F90A0CFB /* AgentViewModel.swift */; };
 		05ACFD383D87D6DD7A58B2E2 /* ARViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A58C2B0A204D6D92F79E572 /* ARViewContainer.swift */; };
 		0C55ECFA9F76B6E8D1FE6676 /* CartSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5011BE6DB59FD90ED8060287 /* CartSheet.swift */; };
+		0E1A0A110000000000000001 /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A0A210000000000000001 /* Products.json */; };
+		0E1A0A110000000000000002 /* sellers.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A0A210000000000000002 /* sellers.json */; };
+		0E1A0A110000000000000003 /* DslrCamera.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A0A210000000000000003 /* DslrCamera.usdz */; };
+		0E1A0A110000000000000004 /* VintageMovieCamera.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A0A210000000000000004 /* VintageMovieCamera.usdz */; };
+		0E1A0A110000000000000005 /* MovieBoomMicrophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A0A210000000000000005 /* MovieBoomMicrophone.usdz */; };
+		0E1A0A110000000000000006 /* MovieStudioSpotlight.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 0E1A0A210000000000000006 /* MovieStudioSpotlight.usdz */; };
 		168B85E3F752076094D17736 /* ProductCatalogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116AA8EE84102B0EF593521E /* ProductCatalogService.swift */; };
+		20B7D7AD0000000000000001 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7D7AE0000000000000001 /* DesignSystem.swift */; };
 		2F2D3DEC8F34BFF5532D5D23 /* ProductCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A921E356D9429128F1CCB55E /* ProductCarousel.swift */; };
 		33998A6BE31ECEDD9B77C318 /* CartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D578D5862A5332FB398902 /* CartService.swift */; };
 		3946A013A19E20045DD2CAE7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBBCB9C521D1F301685DC1B /* Product.swift */; };
@@ -24,8 +31,15 @@
 
 /* Begin PBXFileReference section */
 		06D578D5862A5332FB398902 /* CartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartService.swift; sourceTree = "<group>"; };
+		0E1A0A210000000000000001 /* Products.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
+		0E1A0A210000000000000002 /* sellers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sellers.json; sourceTree = "<group>"; };
+		0E1A0A210000000000000003 /* DslrCamera.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = DslrCamera.usdz; sourceTree = "<group>"; };
+		0E1A0A210000000000000004 /* VintageMovieCamera.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = VintageMovieCamera.usdz; sourceTree = "<group>"; };
+		0E1A0A210000000000000005 /* MovieBoomMicrophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = MovieBoomMicrophone.usdz; sourceTree = "<group>"; };
+		0E1A0A210000000000000006 /* MovieStudioSpotlight.usdz */ = {isa = PBXFileReference; lastKnownFileType = file; path = MovieStudioSpotlight.usdz; sourceTree = "<group>"; };
 		116AA8EE84102B0EF593521E /* ProductCatalogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogService.swift; sourceTree = "<group>"; };
 		1BBBCB9C521D1F301685DC1B /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		20B7D7AE0000000000000001 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		213AFF64C578EF11B091E968 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		4F917BFDDDFFEB40F90A0CFB /* AgentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentViewModel.swift; sourceTree = "<group>"; };
 		5011BE6DB59FD90ED8060287 /* CartSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartSheet.swift; sourceTree = "<group>"; };
@@ -60,6 +74,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0E1A0A310000000000000001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E1A0A210000000000000001 /* Products.json */,
+				0E1A0A210000000000000002 /* sellers.json */,
+				0E1A0A210000000000000003 /* DslrCamera.usdz */,
+				0E1A0A210000000000000004 /* VintageMovieCamera.usdz */,
+				0E1A0A210000000000000005 /* MovieBoomMicrophone.usdz */,
+				0E1A0A210000000000000006 /* MovieStudioSpotlight.usdz */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1A2B1A1760764F53B4DBEC60 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,8 +108,10 @@
 			children = (
 				602F07E22793C7E883C5EDB6 /* ARShoppingApp.swift */,
 				5BED1E744D1E70323A43A037 /* ContentView.swift */,
+				20B7D7AE0000000000000001 /* DesignSystem.swift */,
 				0F5B1F1E9D4DA876417C18F4 /* Features */,
 				1833919A787ED62FA1F6186B /* Models */,
+				0E1A0A310000000000000001 /* Resources */,
 				F67CA67537C62E77C5691355 /* Services */,
 				1A2B1A1760764F53B4DBEC60 /* ViewModels */,
 			);
@@ -148,6 +177,7 @@
 			buildConfigurationList = 05ABE268CFEDEC6A9A8E421D /* Build configuration list for PBXNativeTarget "ShopeeARDemo" */;
 			buildPhases = (
 				E5C587178E31716907EC406F /* Sources */,
+				0E1A0A410000000000000001 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -193,6 +223,22 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		0E1A0A410000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E1A0A110000000000000003 /* DslrCamera.usdz in Resources */,
+				0E1A0A110000000000000005 /* MovieBoomMicrophone.usdz in Resources */,
+				0E1A0A110000000000000006 /* MovieStudioSpotlight.usdz in Resources */,
+				0E1A0A110000000000000001 /* Products.json in Resources */,
+				0E1A0A110000000000000002 /* sellers.json in Resources */,
+				0E1A0A110000000000000004 /* VintageMovieCamera.usdz in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E5C587178E31716907EC406F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -206,6 +252,7 @@
 				33998A6BE31ECEDD9B77C318 /* CartService.swift in Sources */,
 				0C55ECFA9F76B6E8D1FE6676 /* CartSheet.swift in Sources */,
 				B8D7FE2DBD2313EBC5E8B3BE /* ContentView.swift in Sources */,
+				20B7D7AD0000000000000001 /* DesignSystem.swift in Sources */,
 				F2DE0BCF245EE3323B52644F /* OpenAIService.swift in Sources */,
 				3946A013A19E20045DD2CAE7 /* Product.swift in Sources */,
 				B3EA0D678EADF096DDDEDD92 /* ProductCard.swift in Sources */,

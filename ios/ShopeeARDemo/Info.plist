@@ -20,7 +20,11 @@
 	<string>1</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app uses the camera to place AR products in your environment.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app uses the microphone so you can talk to the realtime shopping agent.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>This app uses device motion to stabilize AR content and track placement.</string>
+	<key>AgentBaseURL</key>
+	<string>https://192.168.1.73:3000</string>
 </dict>
 </plist>

@@ -10,6 +10,8 @@ struct ARShoppingApp: App {
             ContentView()
                 .environmentObject(cartService)
                 .environmentObject(viewModel)
+                .preferredColorScheme(.dark)
+                .tint(AppTheme.accent)
                 .task {
                     await viewModel.bootstrap()
                 }

@@ -66,14 +66,13 @@
         <div class="composer">
           <label class="sr-only" for="message">Shopping request</label>
           <input id="message" type="text" placeholder="My sink is leaking. What do I buy?" />
-          <label class="icon-button subtle file-button" aria-label="Upload image">
-            <input id="image-input" type="file" accept="image/*" />
+          <button class="icon-button subtle camera-button" type="button" id="camera-button" aria-label="Open AR camera">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
                 d="M8.6 6.2 9.7 5h4.6l1.1 1.2h2.1A2.5 2.5 0 0 1 20 8.7v7.8A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5V8.7a2.5 2.5 0 0 1 2.5-2.5Zm3.4 3.1a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 1.8a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4Z"
               />
             </svg>
-          </label>
+          </button>
           <button class="icon-button primary" type="button" id="mic-button" aria-label="Start voice agent">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path
